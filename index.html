@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Otwieranie Skrzynki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            </header>
+
+        <main id="mainContent" class="screen open-chest-screen active-screen">
+            <div class="chest-display-area">
+                <div class="chest-wrapper">
+                    <img src="php4img_item_9177.jpg" alt="Skrzynka" id="chestImage" class="chest-image">
+                    <div class="item-animation-container" id="itemAnimationContainer">
+                        <img src="php4img_item_2824.jpg" alt="Przedmiot" id="droppedItem" class="dropped-item">
+                    </div>
+                </div>
+            </div>
+            <button id="openChestButton" class="action-button">Otwórz</button>
+        </main>
+
+        <div id="losujScreen" class="screen">
+            <h2>Losuj</h2>
+            <p>Zawartość ekranu Losuj...</p>
+        </div>
+        <div id="zdobywajScreen" class="screen">
+            <h2>Zdobywaj</h2>
+            <p>Zawartość ekranu Zdobywaj...</p>
+        </div>
+        <div id="ekwipunekScreen" class="screen">
+            <h2>Ekwipunek</h2>
+            <p>Zawartość ekranu Ekwipunek...</p>
+        </div>
+        <div id="opcjeScreen" class="screen">
+            <h2>Opcje</h2>
+            <p>Zawartość ekranu Opcje...</p>
+        </div>
+
+
+        <nav class="bottom-menu">
+            <button class="menu-button" data-target="losujScreen">Losuj</button>
+            <button class="menu-button" data-target="zdobywajScreen">Zdobywaj</button>
+            <button class="menu-button main-menu-button active" data-target="open-chest-screen">Otwórz</button>
+            <button class="menu-button" data-target="ekwipunekScreen">Ekwipunek</button>
+            <button class="menu-button" data-target="opcjeScreen">Opcje</button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
