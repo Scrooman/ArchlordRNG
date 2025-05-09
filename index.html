@@ -28,8 +28,31 @@
             <p>Zawartość ekranu Losuj...</p>
         </div>
         <div id="zdobywajScreen" class="screen">
-            <h2>Zdobywaj</h2>
-            <p>Zawartość ekranu Zdobywaj...</p>
+            <div class="zdobywaj-container">
+                <div class="lista-zadan-panel">
+                    <h3>Dostępne Zadania</h3>
+                    <ul id="listaZadan">
+                        </ul>
+                </div>
+
+                <div class="szczegoly-zadania-panel" style="display: none;">
+                    <h3 id="tytulZadania"></h3>
+                    <p id="opisZadania"></p>
+                    <h4>Wymagane Przedmioty z Ekwipunku:</h4>
+                    <ul id="wymaganePrzedmiotyLista"></ul>
+                    <p><strong>Endpoint Docelowy:</strong> <code id="endpointDocelowyInfo"></code></p>
+                    <p><strong>Metoda HTTP:</strong> <code id="metodaHttpInfo">PUT</code></p>
+
+                    <div class="edytor-json-kontener">
+                        <label for="edytorJsonInput">Treść żądania (JSON):</label>
+                        <textarea id="edytorJsonInput" rows="12" placeholder="Wpisz tutaj swoje żądanie w formacie JSON..."></textarea>
+                        <button id="podpowiedzJsonButton" class="utility-button">Pokaż przykład JSON</button>
+                    </div>
+
+                    <button id="wyslijZadanieButton" class="action-button">Wyślij Żądanie</button>
+                    <div id="informacjaZwrotnaZadania" class="feedback-message"></div>
+                </div>
+            </div>
         </div>
         <div id="ekwipunekScreen" class="screen">
             <h2>Ekwipunek</h2>
