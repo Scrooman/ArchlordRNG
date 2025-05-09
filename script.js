@@ -374,8 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
             screens.forEach(screen => screen.classList.remove('active-screen'));
             menuButtons.forEach(btn => btn.classList.remove('active'));
 
-            // Activate the target screen and button
-            const targetScreen = document.getElementById(targetScreenId) || document.querySelector(`.${targetScreenId}`); // handles both ID and classname for open-chest-screen
+
             if (targetScreen) {
                 targetScreen.classList.add('active-screen');
             }
