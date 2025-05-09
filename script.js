@@ -316,20 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Modyfikacja istniejącej logiki nawigacji menu, aby inicjować ekran Zdobywaj
-    // Znajdź swoją pętlę menuButtons.forEach...
-    menuButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // ... (istniejący kod ukrywania/pokazywania ekranów i przycisków) ...
-            const targetScreenId = button.dataset.target; // Lub button.getAttribute('data-target')
-            const targetScreen = document.getElementById(targetScreenId) || document.querySelector(`.${targetScreenId}`); // Dodatkowe sprawdzenie dla open-chest-screen
-
-            if (targetScreen && targetScreen.id === 'zdobywajScreen') {
-                inicjalizujEkranZdobywaj();
-            }
-            // ... (reszta kodu w pętli) ...
-        });
-    });
+    
 
      // Inicjalizacja, jeśli ekran "Zdobywaj" jest domyślnie aktywny
     if (document.querySelector('#zdobywajScreen.active-screen')) {
@@ -377,8 +364,12 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             if (isAnimating) return; // Don't switch screens during animation
 
-            const targetScreenId = button.dataset.target;
+            const targetScreenId = button.dataset.target; // Lub button.getAttribute('data-target')
+            const targetScreen = document.getElementById(targetScreenId) || document.querySelector(`.${targetScreenId}`); // Dodatkowe sprawdzenie dla open-chest-screen
 
+            if (targetScreen && targetScreen.id === 'zdobywajScreen') {
+                inicjalizujEkranZdobywaj();
+            }
             // Deactivate all screens and buttons
             screens.forEach(screen => screen.classList.remove('active-screen'));
             menuButtons.forEach(btn => btn.classList.remove('active'));
@@ -398,6 +389,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+   
 
     // Set the "Otwórz" screen as active by default
     const initialScreen = document.querySelector('.open-chest-screen');
