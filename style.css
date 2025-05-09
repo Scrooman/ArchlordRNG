@@ -243,3 +243,137 @@ body {
 .menu-button.main-menu-button:active {
     background-color: var(--main-button-active-bg);
 }
+
+/* Style dla Ekranu Zdobywaj */
+.zdobywaj-container {
+    display: flex;
+    flex-direction: column; /* Na mniejszych ekranach, lub row dla szerszych */
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.lista-zadan-panel {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--ui-border-color);
+    border-radius: 5px;
+    background-color: var(--bg-dark-primary);
+    max-height: 25vh; /* Ogranicz wysokość listy zadań */
+    overflow-y: auto;
+}
+
+.lista-zadan-panel h3 {
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+#listaZadan {
+    list-style: none;
+    padding: 0;
+}
+
+#listaZadan li {
+    padding: 8px 12px;
+    background-color: var(--ui-element-bg);
+    margin-bottom: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: background-color 0.2s, border-left-color 0.2s;
+}
+
+#listaZadan li:hover {
+    background-color: var(--ui-element-hover-bg);
+}
+
+#listaZadan li.aktywne-zadanie {
+    background-color: var(--main-button-active-bg);
+    color: var(--main-button-text-color);
+    border-left: 3px solid var(--accent-color);
+    font-weight: bold;
+}
+
+.szczegoly-zadania-panel {
+    padding: 15px;
+    border: 1px solid var(--ui-border-color);
+    border-radius: 5px;
+    background-color: var(--bg-dark-primary);
+    flex-grow: 1; /* Zajmuje pozostałe miejsce */
+    overflow-y: auto; /* Umożliwia przewijanie, jeśli treść jest długa */
+}
+
+.szczegoly-zadania-panel h3, .szczegoly-zadania-panel h4 {
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+#wymaganePrzedmiotyLista {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+#wymaganePrzedmiotyLista li.posiadane {
+    color: lightgreen;
+}
+#wymaganePrzedmiotyLista li.nieposiadane {
+    color: salmon;
+    text-decoration: line-through;
+}
+
+
+.edytor-json-kontener {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.edytor-json-kontener label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#edytorJsonInput {
+    width: 100%;
+    background-color: #0e1620; /* Ciemniejsze tło dla edytora */
+    color: #e0e0e0;
+    border: 1px solid var(--ui-border-color);
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace; /* Lepsze dla kodu */
+    font-size: 0.95em;
+    padding: 8px;
+}
+
+.utility-button {
+    background-color: var(--ui-element-bg);
+    color: var(--text-color-light);
+    border: 1px solid var(--ui-border-color);
+    padding: 6px 10px;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: background-color 0.2s;
+}
+.utility-button:hover {
+    background-color: var(--ui-element-hover-bg);
+}
+
+
+#informacjaZwrotnaZadania.success {
+    background-color: #2f855a; /* Ciemniejszy zielony */
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #38a169;
+}
+
+#informacjaZwrotnaZadania.error {
+    background-color: #c53030; /* Ciemniejszy czerwony */
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #e53e3e;
+}
